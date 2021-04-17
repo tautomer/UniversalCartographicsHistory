@@ -16,8 +16,8 @@ a lot.
 Make sure you have [Python 3](https://www.python.org/downloads/) installed. Any
 version of Python 3 should work. No 3rd party package required.
 
-Download the script [here](https://raw.githubusercontent.com/tautomer/UniversalCartographicsHistory/master/uchistory/uchistory.py).
-Double click or run the script in cli.
+Download the script [here](https://raw.githubusercontent.com/tautomer/UniversalCartographicsHistory/master/uchistory/uchistory.py)
+and save it to your computer. Double click or run the script in cli.
 
 Example output
 
