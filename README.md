@@ -11,6 +11,14 @@ I can finally finish this script.
 The script should be fully functional, though many things can be improved quite
 a lot.
 
+## How to use
+
+Make sure you have [Python 3](https://www.python.org/downloads/) installed. Any
+version of Python 3 should work. No 3rd party package required.
+
+Download the script [here](https://raw.githubusercontent.com/tautomer/UniversalCartographicsHistory/master/uchistory/uchistory.py).
+Double click or run the script in cli.
+
 ## How it works
 
 Well, basically finding events like `FSDJump`, `Scan`, `SAAScanComplete` in all
@@ -50,3 +58,10 @@ If you happen to be the one who actually mapped these bodies... I'm sorry.
 * Add cli arguments or a config file to control some key parameter.
 * A simple GUI probably?
  
+## Find a bug?
+
+Report it to me over GitHub. It will be great if you can attach some ED logs so
+that it can be easier for me to look into the problem.
+
+Disclaimer: I'm very busy IRL recently so that I can't guarantee a fix for the
+issue you might have, but I'll try my best.
