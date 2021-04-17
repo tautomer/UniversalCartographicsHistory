@@ -19,6 +19,44 @@ version of Python 3 should work. No 3rd party package required.
 Download the script [here](https://raw.githubusercontent.com/tautomer/UniversalCartographicsHistory/master/uchistory/uchistory.py).
 Double click or run the script in cli.
 
+Example output
+
+```text
+Commander Name: Qualcomm
+Total number of First Discovery + First Mapped: 239
+Total number of First Discovery: 9632
+Total number of First Mapped: 119
+
+System Name: Sharur
+  First Discovery:
+    Sharur B
+    Sharur B A Belt Cluster 1
+    Sharur B A Belt Cluster 4
+    Sharur A
+
+System Name: Col 285 Sector ZZ-Y d57
+  First Mapped:
+    Col 285 Sector ZZ-Y d57 4
+
+System Name: Praea Euq UQ-X b1-6
+  First Mapped:
+    Praea Euq UQ-X b1-6 A 1
+    Praea Euq UQ-X b1-6 A 2
+    Praea Euq UQ-X b1-6 A 3
+    Praea Euq UQ-X b1-6 A 4
+    Praea Euq UQ-X b1-6 A 5
+    Praea Euq UQ-X b1-6 A 6
+    Praea Euq UQ-X b1-6 B 8
+    Praea Euq UQ-X b1-6 B 6
+    Praea Euq UQ-X b1-6 B 5
+    Praea Euq UQ-X b1-6 B 1
+    Praea Euq UQ-X b1-6 B 2
+    Praea Euq UQ-X b1-6 B 3
+    Praea Euq UQ-X b1-6 B 3 a
+    Praea Euq UQ-X b1-6 B 4
+    Praea Euq UQ-X b1-6 B 7
+```
+
 ## How it works
 
 Well, basically finding events like `FSDJump`, `Scan`, `SAAScanComplete` in all
