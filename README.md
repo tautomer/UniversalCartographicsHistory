@@ -40,11 +40,12 @@ Help Option:
 
 E:D Log Path:
   -l, --log-path=         Path to the E:D log files
-                          Defaults to C:\Users\username\Saved Games\Frontier Developments\Elite Dangerous
+                          Make sure the path is quoted if there are spaces within the path. See the default below
+                          Defaults to 'C:\Users\username\Saved Games\Frontier Developments\Elite Dangerous'
 
 Output File:
   -o, --output=           Output filename and path to save the scan results
-                          Defaults to Universal Cartographics Histroy Scan.txt in the current folder
+                          Defaults to 'Universal Cartographics Histroy Scan.txt' in the current folder
 
 Output Level:
   -v, --verbose=          Output verbose level
@@ -57,38 +58,38 @@ Example output
 
 ```text
 Commander Name: Qualcomm
-Total number of First Discovery + First Mapped: 239
-Total number of First Discovery: 9632
-Total number of First Mapped: 119
+Total Number of First Discovery + First Mapped: 239
+Total Number of First Discovery: 9632
+Total Number of First Mapped: 119
 
 System Name: Sharur
-  First Discovery:
+  First Discovery: 4 Bodies
+    Sharur A
     Sharur B
     Sharur B A Belt Cluster 1
     Sharur B A Belt Cluster 4
-    Sharur A
 
 System Name: Col 285 Sector ZZ-Y d57
-  First Mapped:
+  First Mapped: 1 Body
     Col 285 Sector ZZ-Y d57 4
 
 System Name: Praea Euq UQ-X b1-6
-  First Mapped:
+  First Mapped: 15 Bodies
     Praea Euq UQ-X b1-6 A 1
     Praea Euq UQ-X b1-6 A 2
     Praea Euq UQ-X b1-6 A 3
     Praea Euq UQ-X b1-6 A 4
     Praea Euq UQ-X b1-6 A 5
     Praea Euq UQ-X b1-6 A 6
-    Praea Euq UQ-X b1-6 B 8
-    Praea Euq UQ-X b1-6 B 6
-    Praea Euq UQ-X b1-6 B 5
     Praea Euq UQ-X b1-6 B 1
     Praea Euq UQ-X b1-6 B 2
     Praea Euq UQ-X b1-6 B 3
     Praea Euq UQ-X b1-6 B 3 a
     Praea Euq UQ-X b1-6 B 4
+    Praea Euq UQ-X b1-6 B 5
+    Praea Euq UQ-X b1-6 B 6
     Praea Euq UQ-X b1-6 B 7
+    Praea Euq UQ-X b1-6 B 8
 ```
 
 ## How it works
@@ -131,6 +132,8 @@ the same folder as the script.
 * A simple GUI probably?
 
 * Add an optional config file?
+
+* Add CI.
 
 ## Find a bug?
 

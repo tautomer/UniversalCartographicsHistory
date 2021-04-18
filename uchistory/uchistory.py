@@ -256,9 +256,9 @@ class UniversalCartographicsHistory:
             # if there are more than 1 CNDR found, print a summary of all CMDR's stats
             if len(self.history['cmdrs']) > 1:
                 output = (f"Number of CMDR's Found {self.history['cmdr']}\n"
-                          f"Total number of First Discovery + First Mapped: {self.history['count_fdfm']}\n"
-                          f"Total number of First Discovery: {self.history['count_fd']}\n"
-                          f"Total number of First Mapped: {self.history['count_fm']}\n")
+                          f"Total Number of First Discovery + First Mapped: {self.history['count_fdfm']}\n"
+                          f"Total Number of First Discovery: {self.history['count_fd']}\n"
+                          f"Total Number of First Mapped: {self.history['count_fm']}\n")
                 print(output, file=summary)
             # for each CMDR
             for val in self.history['cmdrs'].values():
@@ -267,9 +267,9 @@ class UniversalCartographicsHistory:
                     continue
                 # summary for this CMDR
                 output = (f"Commander Name: {val['name']}\n"
-                          f"Total number of First Discovery + First Mapped: {val['count_fdfm']}\n"
-                          f"Total number of First Discovery: {val['count_fd']}\n"
-                          f"Total number of First Mapped: {val['count_fm']}\n")
+                          f"Total Number of First Discovery + First Mapped: {val['count_fdfm']}\n"
+                          f"Total Number of First Discovery: {val['count_fd']}\n"
+                          f"Total Number of First Mapped: {val['count_fm']}\n")
                 print(output, file=summary)
                 # details on each system
                 for system, discoveries in val['discoveries'].items():
@@ -279,7 +279,11 @@ class UniversalCartographicsHistory:
                         if key in discoveries:                            
                             label = self.labels[idx]
                             n = len(discoveries[key])
-                            sys_summary += f'  {label}: {n} Bodies\n'
+                            sys_summary += f'  {label}: {n}'
+                            if n > 1:                                    
+                                sys_summary += ' Bodies\n'
+                            else:
+                                sys_summary += ' Body\n'
                             if self.verbose > 1:
                                 # sort all body names in alphabet
                                 bodies = sorted(list(discoveries[key]))
@@ -306,10 +310,11 @@ def get_opt(args, history):
                 '  -h, --help              Show this message\n\n'
                 'E:D Log Path:\n'
                 '  -l, --log-path=         Path to the E:D log files\n'
-                '                          Defaults to C:\\Users\\username\\Saved Games\\Frontier Developments\\Elite Dangerous\n\n'
+                '                          Make sure the path is quoted if there are spaces within the path. See the default below\n'
+                "                          Defaults to 'C:\\Users\\username\\Saved Games\\Frontier Developments\\Elite Dangerous'\n\n"
                 'Output File:\n'
                 '  -o, --output=           Output filename and path to save the scan results\n'
-                '                          Defaults to Universal Cartographics Histroy Scan.txt in the current folder\n\n'
+                "                          Defaults to 'Universal Cartographics Histroy Scan.txt' in the current folder\n\n"
                 'Output Level:\n'
                 '  -v, --verbose=          Output verbose level\n'
                 '                          Level 1 lists only the number of bodies discovered/mapped in the system\n'
