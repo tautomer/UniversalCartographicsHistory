@@ -25,6 +25,10 @@ Note: if your Python isn't the Microsoft Store version, typing `python3` or
 `python3.exe` will only lead you to the Store. Make sure type `python` or
 `python.exe` instead.
 
+Also note: this script should also work on Linux, as I can test it runs on my
+WSL2. However, I'm not sure if the default log path is
+`~/Saved Games/Frontier Developments/Elite Dangerous` on Linux.
+
 Some config options are provided via CLI:
 
 ```text
@@ -97,8 +101,6 @@ the same folder as the script.
 
 ## Known issues
 
-* Body names aren't well sorted.
-
 * There some well-known systems (the ones with a unique name, not something like
   `Col balabala`) where the bodies are shown as undiscovered, or say not
   discovered by any one.
@@ -128,7 +130,7 @@ the same folder as the script.
 
 * A simple GUI probably?
 
-* Sort bodies in a system before printing?
+* Add an optional config file?
 
 ## Find a bug?
 

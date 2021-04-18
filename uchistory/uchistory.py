@@ -29,7 +29,7 @@ class UniversalCartographicsHistory:
             ValueError: if the path doesn't exist or is a file
         """
         if arg:
-            if os.path.isdir(self.log_path):
+            if os.path.isdir(arg):
                 uc_history.log_path = os.path.realpath(arg)
                 return
             else:
@@ -44,7 +44,7 @@ class UniversalCartographicsHistory:
             ValueError: if there is no journal file in the folder
         """
         # find all ED logs
-        journals = glob.glob(self.log_path + "\Journal.*.log")
+        journals = glob.glob(self.log_path + "/Journal.*.log")
         # sort by the last modified time in ascending order
         journals.sort(key=os.path.getmtime)
         # if there is no journal file found
@@ -233,7 +233,7 @@ class UniversalCartographicsHistory:
         Args:
             fdfm (int): first discovery and first mapped
             fd (int): first discovery
-            fm (int): firt mapped
+            fm (int): first mapped
         """
         self.history['count_fdfm'] += fdfm
         self.history['count_fd'] += fd
@@ -247,7 +247,7 @@ class UniversalCartographicsHistory:
         """
         with open(self.output, 'w') as summary:
             # print header
-            text = (f'# Scan starts on {time.ctime()}\n'
+            text = (f'# Scan finished on {time.ctime()}\n'
                     '# Note: Well-known bodies are shown as undiscovered in game. While I can rule out\n'
                     '# these false positives for planets, as they are already mapped but undiscovered.\n'
                     "# I'm not able to do anything to the belts and stars as they are not mapable. As\n"
@@ -281,8 +281,9 @@ class UniversalCartographicsHistory:
                             n = len(discoveries[key])
                             sys_summary += f'  {label}: {n} Bodies\n'
                             if self.verbose > 1:
-                                bodies = discoveries[key].keys()
-                                for body in discoveries[key].keys():
+                                # sort all body names in alphabet
+                                bodies = sorted(list(discoveries[key]))
+                                for body in bodies:
                                     sys_summary += f'    {body}\n'
                     print(sys_summary, file=summary)
 
@@ -345,9 +346,9 @@ def get_opt(args, history):
                     history.verbose = arg
             except ValueError:                    
                 print(f"{arg} isn't a valid integer number. Use default verbose=2")
-    print('Log path is ', history.log_path)
-    print('Output file is ', history.output)
-    print('Verbose level is ', history.verbose)
+    print('Log path is', history.log_path)
+    print('Output file is', history.output)
+    print('Verbose level is', history.verbose)
 
 if __name__ == "__main__":
     uc_history = UniversalCartographicsHistory()
