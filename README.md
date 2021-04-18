@@ -13,11 +13,41 @@ a lot.
 
 ## How to use
 
-Make sure you have [Python 3](https://www.python.org/downloads/) installed. Any
-version of Python 3 should work. No 3rd party package required.
+Make sure you have [Python 3](https://www.python.org/downloads/) installed on
+your Windows. Alternatively, type `python3` in `cmd` or `PowerShell` to install
+a copy via Microsoft Store. Any version of Python 3 should work. No 3rd party
+package required.
 
 Download the script [here](https://raw.githubusercontent.com/tautomer/UniversalCartographicsHistory/master/uchistory/uchistory.py)
-and save it to your computer. Double click or run the script in cli.
+and save it to your computer. Double click or run the script in CLI.
+
+Note: if your Python isn't the Microsoft Store version, typing `python3` or
+`python3.exe` will only lead you to the Store. Make sure type `python` or
+`python.exe` instead.
+
+Some config options are provided via CLI:
+
+```text
+Usage:
+  python.exe uchistory.py [OPTION...]
+
+Help Option:
+  -h, --help              Show this message
+
+E:D Log Path:
+  -l, --log-path=         Path to the E:D log files
+                          Defaults to C:\Users\username\Saved Games\Frontier Developments\Elite Dangerous
+
+Output File:
+  -o, --output=           Output filename and path to save the scan results
+                          Defaults to Universal Cartographics Histroy Scan.txt in the current folder
+
+Output Level:
+  -v, --verbose=          Output verbose level
+                          Level 1 lists only the number of bodies discovered/mapped in the system
+                          Level 2 lists the body names as well
+                          Defaults to 2
+```
 
 Example output
 
@@ -67,35 +97,39 @@ the same folder as the script.
 
 ## Known issues
 
-There some well-known systems (the ones with a unique name, not something like
-`Col balabala`) where the bodies are shown as undiscovered, or say not
-discovered by any one.
+* Body names aren't well sorted.
 
-For example, the first ever system I ever "honked", `Sharur` in the starting
-space.
+* There some well-known systems (the ones with a unique name, not something like
+  `Col balabala`) where the bodies are shown as undiscovered, or say not
+  discovered by any one.
 
-![Sharur](assets/Sharur.jpg)
+  For example, the first ever system I ever "honked", `Sharur` in the starting
+  space.
 
-In the journal, these bodies are shown as
+  ![Sharur](assets/Sharur.jpg)
 
-```text
-{ "timestamp":"2020-11-25T21:44:23Z", "event":"Scan", "ScanType":"NavBeaconDetail", "BodyName":"Sharur B A Belt Cluster 4", "BodyID":16, "Parents":[ {"Ring":12}, {"Star":2}, {"Null":0} ], "StarSystem":"Sharur", "SystemAddress":1733187048154, "DistanceFromArrivalLS":41381.868618, "WasDiscovered":false, "WasMapped":false }
-```
+  In the journal, these bodies are shown as
 
-No one discovered these bodies and the stars and belt clusters are not mappable,
-which means I can't distinguish whether they are first discovered by you or not.
+  ```text
+  { "timestamp":"2020-11-25T21:44:23Z", "event":"Scan", "ScanType":"NavBeaconDetail", "BodyName":"Sharur B A Belt Cluster 4", "BodyID":16, "Parents":[ {"Ring":12}, {"Star":2}, {"Null":0} ], "StarSystem":"Sharur", "SystemAddress":1733187048154, "DistanceFromArrivalLS":41381.868618, "WasDiscovered":false, "WasMapped":false }
+  ```
 
-On the other hand, the planets in these systems are mappable, so for any bodies
-with status of `"WasDiscovered":false` and `"WasMapped":true` are completely
-ignored.
+  No one discovered these bodies and the stars and belt clusters are not
+  mappable, which means I can't distinguish whether they are first discovered
+  by you or not.
 
-If you happen to be the one who actually mapped these bodies... I'm sorry.
+  On the other hand, the planets in these systems are mappable, so for any
+  bodies with status of `"WasDiscovered":false` and `"WasMapped":true` are
+  completely ignored.
+
+  If you happen to be the one who actually mapped these bodies... I'm sorry.
 
 ## TODO List
 
-* Add cli arguments or a config file to control some key parameter.
 * A simple GUI probably?
- 
+
+* Sort bodies in a system before printing?
+
 ## Find a bug?
 
 Report it to me over GitHub. It will be great if you can attach some ED logs so
