@@ -8,8 +8,9 @@ couldn't find a way to know whether the bodies had been discovered before.
 [Thanks to user `aggasalk` on reddit for the hint!](https://www.reddit.com/r/EliteDangerous/comments/mq50zf/daily_qa_ask_and_answer_any_questions_you_have/guf3tkt?utm_source=share&utm_medium=web2x&context=3)
 I can finally finish this script.
 
-The script should be fully functional, though many things can be improved quite
-a lot.
+The script should be fully functional, but I have only tested the code on my
+own computer. It would be great if you can try the script out and tell me if it
+works or not and how it breaks if it doesn't work!
 
 ## How to use
 
@@ -20,6 +21,10 @@ package required.
 
 Download the script [here](https://raw.githubusercontent.com/tautomer/UniversalCartographicsHistory/master/uchistory/uchistory.py)
 and save it to your computer. Double click or run the script in CLI.
+
+Alternatively, I have packed a standalone executable with PyInstaller which
+behaves exactly like the script. The exe can be downloaded from the
+[releases page](https://github.com/tautomer/UniversalCartographicsHistory/releases).
 
 Note: if your Python isn't the Microsoft Store version, typing `python3` or
 `python3.exe` will only lead you to the Store. Make sure type `python` or
@@ -114,7 +119,29 @@ the same folder as the script.
   In the journal, these bodies are shown as
 
   ```text
-  { "timestamp":"2020-11-25T21:44:23Z", "event":"Scan", "ScanType":"NavBeaconDetail", "BodyName":"Sharur B A Belt Cluster 4", "BodyID":16, "Parents":[ {"Ring":12}, {"Star":2}, {"Null":0} ], "StarSystem":"Sharur", "SystemAddress":1733187048154, "DistanceFromArrivalLS":41381.868618, "WasDiscovered":false, "WasMapped":false }
+  {
+   "timestamp":"2020-11-25T21:44:23Z",
+   "event":"Scan",
+   "ScanType":"NavBeaconDetail",
+   "BodyName":"Sharur B A Belt Cluster 4",
+   "BodyID":16,
+   "Parents":[
+      {
+         "Ring":12
+      },
+      {
+         "Star":2
+      },
+      {
+         "Null":0
+      }
+   ],
+   "StarSystem":"Sharur",
+   "SystemAddress":1733187048154,
+   "DistanceFromArrivalLS":41381.868618,
+   "WasDiscovered":false,
+   "WasMapped":false
+  }
   ```
 
   No one discovered these bodies and the stars and belt clusters are not

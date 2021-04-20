@@ -1,0 +1,5 @@
+uchistory/dist
+uchistory/build
+uchistory/__pycache__
+uchistory/*.spec
+uchistory/upx.exe
